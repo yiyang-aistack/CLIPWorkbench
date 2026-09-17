@@ -1,0 +1,72 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Type checkers / linters / test cache
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.tox/
+
+# IDE / Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project runtime artifacts (DO NOT commit models, data, or databases)
+# ---------- training outputs ----------
+saved_models/
+lora_adapter/
+model_cache/
+# ---------- exported artifacts ----------
+onnx_models/
+*.onnx
+*.onnx.data
+# ---------- model weights (catch-all) ----------
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+# ---------- datasets / data ----------
+dataset_output/
+datasets/samples/
+*.db
+*.sqlite
+*.sqlite3
+# ---------- logs ----------
+*.log
+*.out
+
+# Environment secrets
+.env
+.env.local
+.env.*.local
+
+# Config runtime overrides (code ships defaults, yaml is user-specific)
+configs/*.yaml
+!configs/default.yaml
+
+# Archives that might accidentally be created
+*.zip
+*.tar.gz
+
+# Jupyter
+.ipynb_checkpoints/

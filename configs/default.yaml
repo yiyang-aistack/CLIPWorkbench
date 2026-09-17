@@ -1,0 +1,36 @@
+# CLIP model configuration
+model:
+  name: "openai/clip-vit-base-patch32"
+  local_cache_dir: "./model_cache"
+  image_size: 224
+
+# Training hyperparameters
+train:
+  batch_size: 16
+  learning_rate: 0.0001
+  num_epochs: 20
+  warmup_steps: 20
+  logging_steps: 10
+  val_split: 0.15
+  weight_decay: 0.01
+  gradient_accumulation_steps: 1
+  use_amp: true
+  use_early_stopping: true
+  patience: 5
+  delta: 0.0001
+  linear_probe_epochs: 10
+  lora_r: 8
+  lora_alpha: 16
+  lora_dropout: 0.1
+  lora_target_modules: ["q_proj", "v_proj"]
+  inference_temperature: 1.0
+  top_k: 5
+
+# Storage paths
+storage:
+  models_dir: "./saved_models"
+  onnx_dir: "./onnx_models"
+  db_path: "./clipworkbench.db"
+
+# Device override (empty = auto-detect CUDA/CPU)
+device: ""

@@ -1,0 +1,16 @@
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - model_cache:/app/model_cache
+      - saved_models:/app/saved_models
+    environment:
+      - DEVICE=cpu
+
+volumes:
+  model_cache:
+  saved_models:
